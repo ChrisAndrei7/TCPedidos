@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "72f69107-c32f-4a6d-a025-618bf0fe0e05",
+		"name": "TCPedidos",
+		"description": "Projeto criado para atender a demanda de uma lanchonete através de um sistema de autoatendimento.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33097875",
+		"_collection_link": "https://winter-desert-869279.postman.co/workspace/My-Workspace~bf09e259-9dfb-40ec-823b-a85d2a12f07a/collection/33097875-72f69107-c32f-4a6d-a025-618bf0fe0e05?action=share&source=collection_link&creator=33097875"
+	},
+	"item": [
+		{
+			"name": "Consultar pedidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8002/pedidos/",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"pedidos",
+						""
+					]
+				},
+				"description": "API para consultar pedidos cadastrados, não é necessário informar nada no body."
+			},
+			"response": []
+		},
+		{
+			"name": "Criar pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"valor\": \"10.49\",\r\n        \"quantidade\": \"1\",\r\n        \"produto_id\": \"1\",\r\n        \"cliente_id\": \"1\",\r\n        \"descricao\": \"Acompanhamentos\",\r\n        \"status\": \"RECEBIDO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8002/pedidos/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"pedidos",
+						"create"
+					]
+				},
+				"description": "API para criar novos produtos. Necessário informar os 6 campos abaixo:\n\n- valor\n- quantidade\n- produto_id\n- cliente_id\n- descricao\n- status"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar pedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantidade\": 1,\r\n    \"produto_id\": 2,\r\n    \"cliente_id\": 3,\r\n    \"descricao\": \"Acompanhamentos\",\r\n    \"status\": \"EM_PREPARACAO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8002/pedidos/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"pedidos",
+						"update",
+						"1"
+					]
+				},
+				"description": "API para atualização do pedido, necessário informar os 7 dados abaixo:\n\n- id\n    \n- valor\n    \n- quantidade\n- pruduto_id\n- cliente_id\n- descricao\n- status"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar pedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8002/pedidos/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"pedidos",
+						"delete",
+						"1"
+					]
+				},
+				"description": "API para deletar um pedido. Necessário informar o id no final do endpoint."
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar pedido por status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8002/pedidos/readporstatus/RECEBIDO",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"pedidos",
+						"readporstatus",
+						"RECEBIDO"
+					]
+				},
+				"description": "API para consultar pedidos por status. Necessário informar o status no final do endpoint para retornar pedidos."
+			},
+			"response": []
+		}
+	]
+}
