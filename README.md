@@ -42,3 +42,7 @@ Para executar os testes, localizados dentro da pasta "feature", deve ser process
 OBS: BDD está dentro do arquivo "pedidos.feature"
 
 #### behave appPedidos/project/features/pedidos.feature
+
+# Evidência dos testes:
+
+![image](https://github.com/user-attachments/assets/bc086d60-8eb8-44e5-ace6-8b33183d2160)
